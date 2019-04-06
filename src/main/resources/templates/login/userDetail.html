@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<meta charset="UTF-8">
+<link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet"/>
+<script th:src="@{/webjars/jquery/3.3.1/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+<title>User Detail</title>
+</head>
+<body>
+<div th:fragment="userDetail_contents">
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="page-header">
+                <h1>User Details</h1>
+            </div>
+            <form method="post" th:action="@{'/userDetail'}" th:object="${signupForm}">
+                <table class="table table-bordered table-hover">
+                    <tr>
+                        <th class="active col-sm-2">user ID</th>
+                        <td class="col-sm-3">
+                            <div class="form-group">
+                                <input type="text" class="form-control" th:field="*{userId}" readonly="readonly" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="active">password</th>
+                        <td class="col-sm-3">
+                            <div class="form-group">
+                                <input type="text" class="form-control" th:field="*{password}" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="active">User Name</th>
+                        <td class="col-sm-3">
+                            <div class="form-group">
+                                <input type="text" class="form-control" th:field="*{userName}" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="active">Birthday</th>
+                        <td class="col-sm-3">
+                            <div class="form-group">
+                                <input type="text" class="form-control" th:field="*{birthday}" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="active">Age</th>
+                        <td class="col-sm-3">
+                            <div class="form-group">
+                                <input type="text" class="form-control" th:field="*{age}" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="active">Marriage</th>
+                        <td class="col-sm-3">
+                            <div class="form-group">
+                                <div th:each="item : ${radioMarriage}">
+                                    <input type="radio" name="radioMarriage" th:value="${item.value}" th:text="${item.key}" th:field="*{marriage}">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <button class="btn btn-primary btn-lg pull-right" type="submit" name="update">Update User</button>
+                <button class="btn btn-primary btn-lg" type="submit" name="delete">Delete User</button>
+                <br/>
+                <label class="text-info" th:text="${result}"></label>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+</html>

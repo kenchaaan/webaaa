@@ -1,0 +1,4 @@
+2019-04-06 12:45:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "EMPLOYEE" が見つかりません
+Table "EMPLOYEE" not found; SQL statement:
+INSERT INTO employee (employee_id, employee_name, age) VALUES(1, "kenji-kondo", 20) [42102-199]
