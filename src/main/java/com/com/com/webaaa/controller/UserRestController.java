@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class UserRestController {
@@ -16,7 +17,7 @@ public class UserRestController {
     RestService restService;
 
     @GetMapping("/api/users/{id:.+}")
-    public User getUserOne(@PathVariable("id") String userId) {
+    public Optional<User> getUserOne(@PathVariable("id") String userId) {
         return restService.selectOne(userId);
     }
 
