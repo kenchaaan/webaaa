@@ -6,12 +6,11 @@ import org.springframework.dao.DataAccessException;
 import java.util.List;
 
 public interface UserDao {
-
-    public int count() throws DataAccessException;
-    public int insertOne(User user) throws DataAccessException;
-    public User selectOne(String userId) throws DataAccessException;
-    public List<User> selectMany() throws DataAccessException;
-    public int updateOne(User user) throws DataAccessException;
-    public int deleteOne(String userId) throws DataAccessException;
-    public void userCsvOut() throws DataAccessException;
+    int count() throws DataAccessException;
+    int insertOne(User user) throws DataAccessException;
+    User selectOne(String userId) throws DataAccessException;
+    List<User> selectMany() throws DataAccessException;
+    int updateOne(User user) throws DataAccessException;
+    int deleteOne(String userId) throws DataAccessException;
+    void userCsvOut() throws DataAccessException;
 }

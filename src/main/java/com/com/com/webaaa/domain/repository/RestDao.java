@@ -5,13 +5,13 @@ import com.com.com.webaaa.domain.model.User;
 import java.util.List;
 
 public interface RestDao {
-    public User selectOne(String userId);
+    User selectOne(String userId);
 
-    public List<User> selectMany();
+    List<User> selectMany();
 
-    public int createUser(User user);
+    int createUser(User user);
 
-    public int updateUser(User user);
+    int updateUser(User user);
 
-    public int deleteUser(String userId);
+    int deleteUser(String userId);
 }
